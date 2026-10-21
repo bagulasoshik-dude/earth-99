@@ -34,8 +34,9 @@ function App() {
       {/* Globe Component */}
       <Globe
         ref={globeEl}
+        rendererConfig={{ antialias: false, powerPreference: 'low-power' }}
+        showAtmosphere={false}
         globeImageUrl="https://unpkg.com/three-globe/example/img/earth-dark.jpg"
-        backgroundImageUrl="https://unpkg.com/three-globe/example/img/night-sky.png"
         polygonsData={countries.features}
         polygonAltitude={d => d === hoverD ? 0.05 : 0.01}
         polygonCapColor={d => d === hoverD ? 'rgba(255, 255, 255, 0.3)' : 'rgba(200, 0, 0, 0.2)'}
