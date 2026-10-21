@@ -34,12 +34,11 @@ function App() {
       {/* Globe Component */}
       <Globe
         ref={globeEl}
-        globeImageUrl="https://unpkg.com/three-globe/example/img/earth-dark.jpg"
-        backgroundImageUrl="https://unpkg.com/three-globe/example/img/night-sky.png"
+        showAtmosphere={false}
         polygonsData={countries.features}
-        polygonAltitude={d => d === hoverD ? 0.05 : 0.01}
-        polygonCapColor={d => d === hoverD ? 'rgba(255, 255, 255, 0.3)' : 'rgba(200, 0, 0, 0.2)'}
-        polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
+        polygonAltitude={0.005}
+        polygonCapColor={d => d === hoverD ? 'rgba(255, 255, 255, 0.8)' : 'rgba(200, 0, 0, 0.6)'}
+        polygonSideColor={() => 'rgba(0, 0, 0, 0)'}
         polygonStrokeColor={() => '#111'}
         polygonLabel={({ properties: d }) => `
           <div style="background: rgba(0,0,0,0.7); padding: 5px; border-radius: 4px; color: white;">
